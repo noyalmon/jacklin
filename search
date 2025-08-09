@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #search-input {
+      font-size: 18px;
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #search-button {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #search-button:hover {
+      background-color: #0056b3;
+    }
+
+    #under-construction {
+      display: none;
+      margin-top: 50px;
+      font-size: 22px;
+      color: #333;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .construction-box {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 8px;
+      padding: 30px;
+      width: 60%;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .spinner {
+      margin: 20px auto;
+      width: 40px;
+      height: 40px;
+      border: 5px solid #ccc;
+      border-top: 5px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SEARCH ANYTHING!</h1>
+
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button">Search</button>
+  </div>
+
+  <div id="under-construction">
+    <div class="construction-box">
+      <div class="spinner"></div>
+      <p>🚧 We're currently working on this feature.</p>
+      <p>Please check back soon. Your search experience is under construction!</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("search-button").addEventListener("click", function () {
+      document.querySelector(".search-container").style.display = "none";
+      document.getElementById("under-construction").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
